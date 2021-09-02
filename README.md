@@ -1,11 +1,11 @@
-[![namah](https://raw.githubusercontent.com/pepeyen/namah/master/.github/images/project-thumbnail.png)](https://pepeyen.github.io/namah)
+[![namah](https://raw.githubusercontent.com/ericodess/namah/master/.github/images/project-thumbnail.png)](https://ericodess.github.io/namah)
 
 # namah
 
 ### tl;dr
 
  ```
-git clone https://github.com/pepeyen/namah.git
+git clone https://github.com/ericodess/namah.git
 cd namah/
 npm install
 npm start
@@ -15,7 +15,7 @@ Then open [http://localhost:3000/](http://localhost:3000/) to see your app. The 
 
 ### Adding environment variables
 
-Most instances will need an back-end source in order to work a great way to provide it is to get started with [portfolio-api](https://github.com/pepeyen/portfolio-api).
+Most instances will need an back-end source in order to work a great way to provide it is to get started with [portfolio-api](https://github.com/ericodess/portfolio-api).
 
 Also in this project there's blob resource which until at some instance it's public (only GET methods) due to the current CORS policy, after creating this resources add these environment variables:
 
@@ -39,9 +39,9 @@ Firstly this project was coding interview, but as a finished what was asked i sa
     [Mobile desired design](https://www.figma.com/file/K8HLlUcdJMqUQMXS2iQVLV/Teste-Big-Bang-Shop-Mobile?node-id=0%3A1)
 
 
-## [Documentation](https://github.com/pepeyen/namah/wiki)
+## [Documentation](https://github.com/ericodess/namah/wiki)
 
-https://github.com/pepeyen/namah/wiki
+https://github.com/ericodess/namah/wiki
 
 ## Development
 
