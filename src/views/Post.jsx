@@ -12,7 +12,6 @@ import {Page} from '../components';
 //Services
 import {
     getCurrentPageID,
-    fetchFromBlob,
     fetchFromBackEnd
 } from '../services';
 
