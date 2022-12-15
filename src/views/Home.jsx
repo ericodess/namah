@@ -30,7 +30,7 @@ const Home = () => {
     useEffect(() => {
         fetchFromBackEnd('concepts', 'limit=6', {method: 'GET'})
         .then(data => {
-            if(data.success){
+            if(data.wasSuccessful){
                 setConceptList(data.concepts);
             }
         })
@@ -194,7 +194,7 @@ const Home = () => {
                                 return(
                                     <img
                                         key={index}
-                                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/concepts/bg-${element.conceptId}.jpg`}
+                                        src={`data:image/png;base64,${element.conceptImage}`}
                                         alt="A concept"
                                         className="page__concept-image"
                                     />

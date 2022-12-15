@@ -45,7 +45,7 @@ const Courses = () => {
                            redirectorID={element.courseId}
                        >
                             <RedirectorBanner
-                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/course/bg-${element.courseId}.jpg`} 
+                                url={`data:image/png;base64,${element.courseImage}`} 
                                 alt={element.courseTitle} 
                             />
                             <RedirectorInfo>
@@ -59,7 +59,7 @@ const Courses = () => {
                                     infoType="user"
                                     color="grey"
                                 >
-                                    CURSO - {timeConverter(element.courseDate.courseStartDate).day} {timeConverter(element.courseDate.courseStartDate).month} 
+                                    CURSO - {timeConverter(element.courseDate.startDate).day} {timeConverter(element.courseDate.startDate).month} 
                                 </RedirectorText>
                             </RedirectorInfo>
                         </Redirector>

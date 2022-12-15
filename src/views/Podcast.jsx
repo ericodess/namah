@@ -7,6 +7,9 @@ import {
     Redirect
 } from 'react-router-dom';
 
+//Place Holder
+import PlaceHolderAudio from "../assets/audio/podcast-place-holder.mp3";
+
 //Component
 import {
     Page,
@@ -28,7 +31,7 @@ export const Podcast = (props) => {
     useEffect(() => {
         fetchFromBackEnd('podcasts', `id=${currentPageId}`, {method: 'GET'})
         .then(data => {
-            if(data.success !== true){
+            if(data.wasSuccessful !== true){
                 setPodcast(-1);
             }else{
                 setPodcast(data.podcasts[0]);
@@ -43,11 +46,11 @@ export const Podcast = (props) => {
                 <Post>
                     <img 
                         className="page__post-banner"
-                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${currentPageId}.jpg`} 
+                        src={`data:image/png;base64,${podcast.podcastImage}`} 
                         alt={podcast.podcastTitle ? podcast.podcastTitle : 'Loading'}  
                     />
                     <div className="page__podcast">
-                        <AudioPlayer audioURL={`${process.env.REACT_APP_BLOB_HOST}/mp3/podcasts/media-${currentPageId}.mp3`} />   
+                        <AudioPlayer audio={PlaceHolderAudio} />   
                     </div>
                     <p className="page__post-title --centralized-text">{podcast.podcastTitle ? podcast.podcastTitle : 'Loading'}</p>
                     <div className="page__post-info">

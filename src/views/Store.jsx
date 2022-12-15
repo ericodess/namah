@@ -23,7 +23,7 @@ const Store = () => {
     useEffect(() => {
         fetchFromBackEnd('products', '', {method: 'GET'})
         .then(data => {
-            if(data.success === true){
+            if(data.wasSuccessful === true){
                 setProducts(data.products);
                 setIsLoading(false);
             }
@@ -58,7 +58,7 @@ const Store = () => {
                                 </RedirectorText>
                             </RedirectorInfo>
                             <RedirectorBanner 
-                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${element.productId}.jpg`}
+                                url={`data:image/png;base64,${element.productImage}`}
                                 alt={element.productName}
                             />
                         </Redirector>

@@ -57,7 +57,7 @@ const Podcasts = () => {
                                 </RedirectorText>  
                             </RedirectorInfo>
                             <RedirectorBanner
-                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/podcast/bg-${element.podcastId}.jpg`}
+                                url={`data:image/png;base64,${element.podcastImage}`}
                                 alt={element.podcastTitle}
                                 type='podcast'
                             />

@@ -50,7 +50,7 @@ const Login = () => {
                 return response.json();
             })
             .then(data => {
-                if(!data.success){
+                if(!data.wasSuccessful){
                     setIsAnimating(true);
                     setInputResponse(data.description);
                 }else{

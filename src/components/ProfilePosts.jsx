@@ -24,7 +24,7 @@ const ProfilePosts = (props) => {
             if(isFirstRender === true || props.postAuthor !== window.location.hash.split('/')[window.location.hash.split('/').length]){
                 fetchFromBackEnd(`${props.postType}s`, `author=${props.postAuthor}`,{method: 'GET'})
                 .then(data => {
-                    if(data.success !== true){
+                    if(data.wasSuccessful !== true){
                         setPosts([data]);
                     }else{
                         setPosts(data[`${props.postType}s`]);

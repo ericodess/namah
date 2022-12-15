@@ -14,7 +14,7 @@ import {
 import {getMouseClickPosition} from '../services';
 
 const AudioPlayer = (props) => {
-    const [audio] = useState(new Audio(props.audioURL));
+    const [audio] = useState(new Audio(props.audio));
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
     const [audioDuration,setAudioDuration] = useState(0);
     const [audioCurrentTime,setAudioCurrentTime] = useState(0);

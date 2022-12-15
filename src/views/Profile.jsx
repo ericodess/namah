@@ -27,7 +27,7 @@ const Profile = (props) => {
             credentials: 'include'
         })
         .then(data => {
-            if(!data.success){
+            if(!data.wasSuccessful){
                 setResponseData(404);
             }else{
                 setResponseData(data.users[0].userName);

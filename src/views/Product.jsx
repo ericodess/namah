@@ -29,7 +29,7 @@ const Product = (props) => {
     useEffect(() => {
         fetchFromBackEnd('products', `id=${currentPageId}`, {method: 'GET'})
         .then(data => {
-            if(data.success === false){
+            if(data.wasSuccessful === false){
                 setProduct(-1);
             }else{
                 setProduct(data.products[0]);
@@ -49,7 +49,7 @@ const Product = (props) => {
                     <div className="page__product">
                         <img 
                             className="page__product-image"
-                            src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${currentPageId}.jpg`} 
+                            src={`data:image/png;base64,${product.productImage}`} 
                             alt={product.productName ? product.productName : 'Loading'} 
                         />
                         <div className="page__product-info">

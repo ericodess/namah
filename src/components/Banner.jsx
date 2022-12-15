@@ -16,7 +16,7 @@ const Banner = (props) => {
     useEffect(() => {
         fetchFromBackEnd('banners', `id=${props.ID}`, {method: 'GET'})
         .then(data => {
-            if(data.success === true){
+            if(data.wasSuccessful === true){
                 setBanner(data.banners[0]);
                 setIsLoading(false);
             };
@@ -31,7 +31,7 @@ const Banner = (props) => {
         return(
             <div 
                 className="page__banner --thin-borders"
-                style={{backgroundImage: `url(${process.env.REACT_APP_BLOB_HOST}/jpeg/banner/bg-${banner.bannerId}.jpg`}}
+                style={{backgroundImage: `url(data:image/png;base64,${banner.bannerImage})`}}
             >
                 <div className="page__banner-headline --flex-end-self">
                     <p className="page__banner-title --centralized-text --dark-text">

@@ -25,22 +25,19 @@ const Post = (props) => {
     useEffect(() => {
         fetchFromBackEnd('posts', `id=${currentPageId}`, {method: 'GET'})
         .then(data => {
-            if(data.sucess === false){
+            if(data.wasSuccessful === false){
                 setPostMarkdown(-1);
             }else{
                 setPostHeaders({
                     postTitle: data.posts[0].postTitle,
                     postTheme: data.posts[0].postTheme.toUpperCase(),
-                    postAuthor: data.posts[0].postAuthor
+                    postAuthor: data.posts[0].postAuthor,
+                    postImage: data.posts[0].postImage
                 });
-                fetchFromBlob(data.posts[0].postId, 'markdown', 'posts', 'id', 'md')
-                .then(response => {
-                    return response.text();
-                })
-                .then(data => {
-                    setPostMarkdown(data);
-                    setIsLoading(false);
-                })
+
+                setPostMarkdown(atob(data.posts[0].postMarkdown));
+
+                setIsLoading(false);
             }
         });
     },[currentPageId]);
@@ -51,7 +48,7 @@ const Post = (props) => {
                 <div className="page__post --central">
                     <img 
                         className="page__post-banner"
-                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${currentPageId}.jpg`}
+                        src={`data:image/png;base64,${postHeaders.postImage}`}
                         alt={postHeaders.postTitle}
                     />
                     <div className="page__post-title">{postHeaders.postTitle}</div>

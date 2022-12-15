@@ -17,7 +17,7 @@ const FillerProduct = (props) => {
     useEffect(() => {
         fetchFromBackEnd('products', `limit=${props.productCount}`, {method: 'GET'})
         .then(data => {
-            if(data.success === true){
+            if(data.wasSuccessful === true){
                 setProducts(data.products);
                 setIsLoading(false);
             }
@@ -37,7 +37,7 @@ const FillerProduct = (props) => {
                         <Link to={`/store/post?id=${element.productId}&type=product`}>
                             <img
                                 className="page__filler-product-image"
-                                src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${element.productId}.jpg`}
+                                src={`data:image/png;base64,${element.productImage}`}
                                 alt={element.productName}
                             />
                             <span className="page__filler-product-name --dark-text">{element.productName}</span>

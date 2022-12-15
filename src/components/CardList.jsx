@@ -20,7 +20,7 @@ const CardList = (props) => {
     useEffect(() => {
         fetchFromBackEnd(`${props.cardListingType}s`, `limit=${props.cardMaxListing}`, {method: 'GET'})
         .then(data => {
-            if(data.success){
+            if(data.wasSuccessful){
                 setCardList(data[`${props.cardListingType}s`]);
                 setIsLoading(false);
             }

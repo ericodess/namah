@@ -20,7 +20,7 @@ const ProductCard = (props) => {
     useEffect(() => {
         fetchFromBackEnd('products', `id=${props.productID}`, {method: 'GET'})
         .then(data => {
-            if(data.success === true){
+            if(data.wasSuccessful === true){
                 setProduct(data.products[0]);
                 setIsLoading(false);
             }
@@ -36,7 +36,7 @@ const ProductCard = (props) => {
             <div className="card__product">
                 <div 
                     className="card__product-banner"
-                    style={{backgroundImage: `url(${`${process.env.REACT_APP_BLOB_HOST}/jpeg/product/bg-${product.productId}.jpg`})`}}
+                    style={{backgroundImage: `url(data:image/png;base64,${product.productImage})`}}
                 >
                     <LikeButton 
                         toBeLiked={product.productId}

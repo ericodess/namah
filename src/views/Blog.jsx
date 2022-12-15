@@ -62,7 +62,7 @@ const Blog = () => {
                                 </RedirectorText>
                             </RedirectorInfo>
                             <RedirectorBanner
-                                url={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${element.postId}.jpg`}
+                                url={`data:image/png;base64,${element.postImage}`}
                                 alt={element.postTitle}
                             />
                         </Redirector>

@@ -25,7 +25,7 @@ const Course = (props) => {
     useEffect(() => {
         fetchFromBackEnd('courses', `id=${currentPageId}`, {method: 'GET'})
         .then(data => {
-            if(data.sucess === false){
+            if(data.wasSuccessful === false){
                 setCourse(-1);
             }else{
                 setCourse(data.courses[0]);
@@ -41,7 +41,7 @@ const Course = (props) => {
                     <div className="page__course-banner">
                         <img 
                             className="page__course-image"
-                            src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/course/bg-${currentPageId}.jpg`} 
+                            src={`data:image/png;base64,${course.courseImage}`} 
                             alt={course.courseTitle ? course.courseTitle : 'Course'}  
                         />
                         <span className="page__course-info">
@@ -62,7 +62,7 @@ const Course = (props) => {
                                         fill="#73A8A0"
                                     />
                                 </svg>
-                                {course.courseDate ? calcDateDiff(course.courseDate.courseStartDate,course.courseDate.courseEndDate) + ' Days' : ''}
+                                {course.courseDate ? calcDateDiff(course.courseDate.startDate,course.courseDate.endDate) + ' Days' : ''}
                             </p>
                         </span>
                     </div>

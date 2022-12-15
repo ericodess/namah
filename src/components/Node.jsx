@@ -25,7 +25,7 @@ const Node = (props) => {
         if(props.type !== 'newsletter') {
             fetchFromBackEnd(`${props.type}s`, `id=${props.ID}`, {method: 'GET'})
             .then(data => {
-                if(data.success === true){
+                if(data.wasSuccessful === true){
                     setNode(data[`${props.type}s`][0]);
                     setIsLoading(false);
                 }
@@ -65,7 +65,7 @@ const Node = (props) => {
                         return(
                             <React.Fragment>
                                 <img 
-                                    src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/post/bg-${node.postId}.jpg`}
+                                    src={`data:image/png;base64,${node.postImage}`}
                                     alt={node.postTitle}
                                 />
                                 <p className="page__banner-title">
@@ -98,7 +98,7 @@ const Node = (props) => {
                         <React.Fragment>
                             <div className="page__banner-info">
                                 <p className="page__banner-text">
-                                    CURSO - {timeConverter(node.courseDate.courseStartDate).day} {timeConverter(node.courseDate.courseStartDate).month}
+                                    CURSO - {timeConverter(node.courseDate.startDate).day} {timeConverter(node.courseDate.startDate).month}
                                 </p>
                             </div>
                             <p className="page__banner-title">
@@ -147,7 +147,7 @@ const Node = (props) => {
         return(
             <Link
                 className={`page__node --${props.size}-${props.position} --${props.type} --${props.theme}-text`}
-                style={isLoading ? null : {backgroundImage: props.theme === 'light' ? `url(${process.env.REACT_APP_BLOB_HOST}/jpeg/${props.type}/bg-${props.ID}.jpg)` : ''}}
+                style={isLoading ? null : {backgroundImage: props.theme === 'light' ? `url(data:image/png;base64,${node[`${props.type}Image`]})` : ''}}
                 to={`/${translatePageType(props.type)}/post?id=${node[`${props.type}Id`]}&type=${props.type}`}
             >
                 <div className={props.theme === 'light' ? `page__banner-content --flex-end-self ${isLoading === true ? '' : '--fade-up'}` : "page__banner-content --flex-end-self"}>
