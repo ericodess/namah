@@ -5,7 +5,7 @@
 ### tl;dr
 
  ```
-git clone https://github.com/ericodesu/namah.git
+git clone https://github.com/pepeien/namah.git
 cd namah/
 npm install
 npm start
@@ -15,7 +15,7 @@ Then open [http://localhost:3000/](http://localhost:3000/) to see your app. The 
 
 ### Adding environment variables
 
-Most instances will need an back-end source in order to work a great way to provide it is to get started with [portfolio-api](https://github.com/ericodesu/portfolio-api).
+Most instances will need an back-end source in order to work a great way to provide it is to get started with [portfolio-api](https://github.com/pepeien/portfolio-api).
 
 Also in this project there's blob resource which until at some instance it's public (only GET methods) due to the current CORS policy, after creating this resources add these environment variables:
 
@@ -23,8 +23,6 @@ Also in this project there's blob resource which until at some instance it's pub
 REACT_APP_BACK_END_HOST={YOUR-BACK-END-ADDRESS}
 REACT_APP_BLOB_HOST={YOUR-BLOB-ADDRESS}
 ```
-
-PS. The `REACT_APP_BLOB_HOST` public address is: https://namahaassetdev.blob.core.windows.net
 
 Now you are ready to use the project, just issue a `npm start` and you're good to go
 
@@ -39,9 +37,9 @@ Firstly this project was coding interview, but as a finished what was asked i sa
     [Mobile desired design](https://www.figma.com/file/K8HLlUcdJMqUQMXS2iQVLV/Teste-Big-Bang-Shop-Mobile?node-id=0%3A1)
 
 
-## [Documentation](https://github.com/ericodesu/namah/wiki)
+## [Documentation](https://github.com/pepeien/namah/wiki)
 
-https://github.com/ericodesu/namah/wiki
+https://github.com/pepeien/namah/wiki
 
 ## Development
 
