@@ -1,4 +1,4 @@
-[![namah](https://raw.githubusercontent.com/ericodesu/namah/master/.github/images/project-thumbnail.png)](https://ericodesu.github.io/namah)
+[![namah](.github/images/project-thumbnail.png)](https://namah.ericodesu.com)
 
 # namah
 
