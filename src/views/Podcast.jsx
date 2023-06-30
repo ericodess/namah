@@ -46,17 +46,17 @@ export const Podcast = (props) => {
                 <Post>
                     <img 
                         className="page__post-banner"
-                        src={`data:image/png;base64,${podcast.podcastImage}`} 
-                        alt={podcast.podcastTitle ? podcast.podcastTitle : 'Loading'}  
+                        src={`data:image/png;base64,${podcast.image}`} 
+                        alt={podcast.title ? podcast.title : 'Loading'}  
                     />
                     <div className="page__podcast">
                         <AudioPlayer audio={PlaceHolderAudio} />   
                     </div>
-                    <p className="page__post-title --centralized-text">{podcast.podcastTitle ? podcast.podcastTitle : 'Loading'}</p>
+                    <p className="page__post-title --centralized-text">{podcast.title ? podcast.title : 'Loading'}</p>
                     <div className="page__post-info">
                             <Link 
-                                to={`/user/${podcast.podcastAuthor}`}
-                                className="page__post-onwership --grey-text">{podcast.podcastAuthor ? podcast.podcastAuthor : 'Loading'} #{currentPageId}
+                                to={`/user/${podcast.author}`}
+                                className="page__post-onwership --grey-text">{podcast.author ? podcast.author : 'Loading'} #{currentPageId}
                             </Link>
                     </div>
                 </Post>
