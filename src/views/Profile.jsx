@@ -30,7 +30,7 @@ const Profile = (props) => {
             if(!data.wasSuccessful){
                 setResponseData(404);
             }else{
-                setResponseData(data.users[0].userName);
+                setResponseData(data.users[0].name);
                 setIsloading(false);
             }
         })

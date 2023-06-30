@@ -9,27 +9,27 @@ import {
 const CardContent = (props) => {
     if(props.cardType === 'course'){
         const courseInfo = {
-            startDate: timeConverter(props.card.courseDate.startDate),
-            endDate: timeConverter(props.card.courseDate.endDate)
+            startDate: timeConverter(props.card.startDate),
+            endDate: timeConverter(props.card.endDate)
         };
         
         return(
             <React.Fragment>
                 <div className="card-course__banner">
                     <img
-                        src={`data:image/png;base64,${props.card.courseImage}`}
-                        alt={props.card.courseTitle}
+                        src={`data:image/png;base64,${props.card.image}`}
+                        alt={props.card.title}
                     />
                 </div>
                 <div className="card-course__description">
                     <div className="card-course__header">
                         <span>{courseInfo.startDate.day} {courseInfo.startDate.month.charAt(0).toUpperCase() + courseInfo.startDate.month.slice(1).toLowerCase()} - {courseInfo.endDate.day} {courseInfo.endDate.month.charAt(0).toUpperCase() + courseInfo.endDate.month.slice(1).toLowerCase()}</span>
-                        <h4 className="card-course__title">{props.card.courseTitle}</h4>
+                        <h4 className="card-course__title">{props.card.title}</h4>
                     </div>
                     <div className="card-course__footer">
                         <div className="card-course__info">
-                            <p>Por {props.card.courseAuthor}</p>
-                            <p>{calcDateDiff(props.card.courseDate.startDate,props.card.courseDate.endDate)} Dias de curso</p>
+                            <p>Por {props.card.author}</p>
+                            <p>{calcDateDiff(props.card.startDate,props.card.endDate)} Dias de curso</p>
                         </div>
                         <svg
                             className="card-course__redirector"
@@ -52,18 +52,18 @@ const CardContent = (props) => {
         <React.Fragment>
             <div className="card-course__banner">
                 <img
-                    src={`data:image/png;base64,${props.card.podcastImage}`}
-                    alt={props.card.podcastTitle}
+                    src={`data:image/png;base64,${props.card.image}`}
+                    alt={props.card.title}
                 />
             </div>
             <div className="card-course__description">
                 <div className="card-course__header">
-                    <span>{props.card.podcastAuthor} #{props.card.podcastId}</span>
-                    <h4 className="card-course__title">{props.card.podcastTitle}</h4>
+                    <span>{props.card.author} #{props.card.id}</span>
+                    <h4 className="card-course__title">{props.card.title}</h4>
                 </div>
                 <div className="card-course__footer">
                     <div className="card-course__info">
-                        <p>{props.card.podcastDescription}</p>
+                        <p>{props.card.description}</p>
                     </div>
                     <div className="card-course__button">
                         <svg

@@ -21,7 +21,7 @@ const ProfilePosts = (props) => {
         if(!isHeaderActive){
             setPosts([]);
 
-            if(isFirstRender === true || props.postAuthor !== window.location.hash.split('/')[window.location.hash.split('/').length]){
+            if(isFirstRender === true || props.postAthor !== window.location.hash.split('/')[window.location.hash.split('/').length]){
                 fetchFromBackEnd(`${props.postType}s`, `author=${props.postAuthor}`,{method: 'GET'})
                 .then(data => {
                     if(data.wasSuccessful !== true){
@@ -87,11 +87,11 @@ const ProfilePosts = (props) => {
                             >
                                 <Link
                                     className="profile-posts__redirector"
-                                    to={`/${translatePageType(props.postType)}/post?id=${element[`${props.postType}Id`]}&type=${props.postType}`}
+                                    to={`/${translatePageType(props.postType)}/post?id=${element.id}&type=${props.postType}`}
                                 >
-                                    <span>{element[`${props.postType}Title`]}</span>
+                                    <span>{element.title}</span>
                                     <img
-                                        src={`${process.env.REACT_APP_BLOB_HOST}/jpeg/${props.postType}/bg-${element[`${props.postType}Id`]}.jpg`}
+                                        src={`data:image/png;base64,${element.image}`}
                                         alt={props.postType.charAt(0).toUpperCase() + props.postType.slice(1).toLowerCase() + 's'}
                                     />
                                 </Link>

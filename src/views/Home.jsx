@@ -194,7 +194,7 @@ const Home = () => {
                                 return(
                                     <img
                                         key={index}
-                                        src={`data:image/png;base64,${element.conceptImage}`}
+                                        src={`data:image/png;base64,${element.image}`}
                                         alt="A concept"
                                         className="page__concept-image"
                                     />

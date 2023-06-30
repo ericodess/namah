@@ -38,7 +38,7 @@ const CardList = (props) => {
                     <Link
                         key={index}
                         className="card-course"
-                        to={`/${props.cardListingType}s/post?id=${element[`${props.cardListingType}Id`]}&type=${props.cardListingType}`}
+                        to={`/${props.cardListingType}s/post?id=${element.id}&type=${props.cardListingType}`}
                     >
                         <CardContent
                             cardType={props.cardListingType}

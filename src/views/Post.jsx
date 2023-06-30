@@ -28,13 +28,13 @@ const Post = (props) => {
                 setPostMarkdown(-1);
             }else{
                 setPostHeaders({
-                    postTitle: data.posts[0].postTitle,
-                    postTheme: data.posts[0].postTheme.toUpperCase(),
-                    postAuthor: data.posts[0].postAuthor,
-                    postImage: data.posts[0].postImage
+                    postTitle: data.posts[0].title,
+                    postTheme: data.posts[0].theme.toUpperCase(),
+                    postAuthor: data.posts[0].author,
+                    postImage: data.posts[0].image
                 });
 
-                setPostMarkdown(atob(data.posts[0].postMarkdown));
+                setPostMarkdown(data.posts[0].markdown);
 
                 setIsLoading(false);
             }
@@ -53,10 +53,12 @@ const Post = (props) => {
                     <div className="page__post-title">{postHeaders.postTitle}</div>
                     <div className="page__post-info">
                         <span className="page__post-type --grey-text --bottom-thin-borders">{postHeaders.postTheme}</span>
-                        <span className="page__post-onwership --grey-text --bottom-thin-borders">por <Link to={`/user/${postHeaders.postAuthor}`}>{postHeaders.postAuthor}</Link></span>
+                        <span className="page__post-onwership --grey-text --bottom-thin-borders">
+                            por <Link to={`/user/${postHeaders.postAuthor}`}>{postHeaders.postAuthor}</Link>
+                        </span>
                     </div>
                     <div className="page__post-article --dark-grey-text">
-                        <ReactMarkdown source={postMarkdown}/>
+                        <ReactMarkdown children={postMarkdown}/>
                     </div>
                 </div>
             </Page>

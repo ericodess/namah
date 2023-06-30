@@ -42,24 +42,24 @@ const Courses = () => {
                        <Redirector 
                            key={index}
                            redirectorType='course'
-                           redirectorID={element.courseId}
+                           redirectorID={element.id}
                        >
                             <RedirectorBanner
-                                url={`data:image/png;base64,${element.courseImage}`} 
-                                alt={element.courseTitle} 
+                                url={`data:image/png;base64,${element.image}`} 
+                                alt={element.title} 
                             />
                             <RedirectorInfo>
                                 <RedirectorText
                                     infoType="title"
                                     color="dark"
                                 >
-                                    {element.courseTitle}
+                                    {element.title}
                                 </RedirectorText>
                                 <RedirectorText
                                     infoType="user"
                                     color="grey"
                                 >
-                                    CURSO - {timeConverter(element.courseDate.startDate).day} {timeConverter(element.courseDate.startDate).month} 
+                                    CURSO - {timeConverter(element.startDate).day} {timeConverter(element.startDate).month} 
                                 </RedirectorText>
                             </RedirectorInfo>
                         </Redirector>

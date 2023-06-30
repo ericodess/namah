@@ -49,13 +49,13 @@ const Product = (props) => {
                     <div className="page__product">
                         <img 
                             className="page__product-image"
-                            src={`data:image/png;base64,${product.productImage}`} 
-                            alt={product.productName ? product.productName : 'Loading'} 
+                            src={`data:image/png;base64,${product.image}`} 
+                            alt={product.name ? product.name : 'Loading'} 
                         />
                         <div className="page__product-info">
-                            <span className="page__product-name">{product.productName ? product.productName : '\u00A0'}</span>
-                            <span className="page__product-description --grey-text">{product.productDescription ? product.productDescription : '\u00A0'}</span>
-                            <span className="page__product-price">R$ {product.productPrice ? product.productPrice.toFixed(2) : 0}</span>
+                            <span className="page__product-name">{product.name ? product.name : '\u00A0'}</span>
+                            <span className="page__product-description --grey-text">{product.description ? product.description : '\u00A0'}</span>
+                            <span className="page__product-price">R$ {product.price ? product.price.toFixed(2) : 0}</span>
                             <button
                                 className="page__product-button"
                                 onClick={insertProductToCart}

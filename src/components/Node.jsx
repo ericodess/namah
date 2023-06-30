@@ -49,14 +49,14 @@ const Node = (props) => {
                         return(
                             <React.Fragment>
                                 <p className="page__banner-title">
-                                    {node.postTitle}
+                                    {node.title}
                                 </p>
                                 <div className="page__banner-info">
                                     <p className="page__banner-text --underlined">
-                                        {node.postTheme.toUpperCase()}
+                                        {node.theme.toUpperCase()}
                                     </p>
                                     <p className="page__banner-text">
-                                        por <span className="--underlined">{node.postAuthor}</span>
+                                        por <span className="--underlined">{node.author}</span>
                                     </p>
                                 </div>
                             </React.Fragment>
@@ -65,17 +65,17 @@ const Node = (props) => {
                         return(
                             <React.Fragment>
                                 <img 
-                                    src={`data:image/png;base64,${node.postImage}`}
-                                    alt={node.postTitle}
+                                    src={`data:image/png;base64,${node.image}`}
+                                    alt={node.title}
                                 />
                                 <p className="page__banner-title">
-                                    {node.postTitle}
+                                    {node.title}
                                 </p>
                                 <p className="page__banner-text --underlined">
-                                    {node.postTheme.toUpperCase()}
+                                    {node.theme.toUpperCase()}
                                 </p>
                                 <span className="page__banner-text">
-                                    {node.postTitle}
+                                    {node.title}
                                 </span>
                             </React.Fragment>
                         );
@@ -85,11 +85,11 @@ const Node = (props) => {
                         <React.Fragment>
                             <div className="page__banner-info">
                                 <p className="page__banner-text">
-                                    {node.podcastAuthor} #{node.podcastId}
+                                    {node.author} #{node.id}
                                 </p>
                             </div>
                             <p className="page__banner-title">
-                                {node.podcastTitle}
+                                {node.title}
                             </p>
                         </React.Fragment>
                     );
@@ -98,11 +98,11 @@ const Node = (props) => {
                         <React.Fragment>
                             <div className="page__banner-info">
                                 <p className="page__banner-text">
-                                    CURSO - {timeConverter(node.courseDate.startDate).day} {timeConverter(node.courseDate.startDate).month}
+                                    CURSO - {timeConverter(node.startDate).day} {timeConverter(node.startDate).month}
                                 </p>
                             </div>
                             <p className="page__banner-title">
-                                {node.courseTitle}
+                                {node.title}
                             </p>
                         </React.Fragment>
                     );
@@ -110,7 +110,7 @@ const Node = (props) => {
                     return(
                         <React.Fragment>
                             <p className="page__banner-title">
-                                {node.productName}
+                                {node.name}
                             </p>
                             <div className="page__banner-info">
                                 <p className="page__banner-text">COMPRE AGORA</p>
@@ -147,8 +147,8 @@ const Node = (props) => {
         return(
             <Link
                 className={`page__node --${props.size}-${props.position} --${props.type} --${props.theme}-text`}
-                style={isLoading ? null : {backgroundImage: props.theme === 'light' ? `url(data:image/png;base64,${node[`${props.type}Image`]})` : ''}}
-                to={`/${translatePageType(props.type)}/post?id=${node[`${props.type}Id`]}&type=${props.type}`}
+                style={isLoading ? null : {backgroundImage: props.theme === 'light' ? `url(data:image/png;base64,${node.image})` : ''}}
+                to={`/${translatePageType(props.type)}/post?id=${node.id}&type=${props.type}`}
             >
                 <div className={props.theme === 'light' ? `page__banner-content --flex-end-self ${isLoading === true ? '' : '--fade-up'}` : "page__banner-content --flex-end-self"}>
                     {nodeChildren}  

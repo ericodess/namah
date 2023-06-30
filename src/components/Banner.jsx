@@ -31,14 +31,14 @@ const Banner = (props) => {
         return(
             <div 
                 className="page__banner --thin-borders"
-                style={{backgroundImage: `url(data:image/png;base64,${banner.bannerImage})`}}
+                style={{backgroundImage: `url(data:image/png;base64,${banner.image})`}}
             >
                 <div className="page__banner-headline --flex-end-self">
                     <p className="page__banner-title --centralized-text --dark-text">
-                        {banner.bannerTitle}
+                        {banner.title}
                     </p>
                     <p className="page__banner-text --centralized-text --grey-text">
-                        {banner.bannerDescription}
+                        {banner.description}
                     </p>
                     {props.children}
                 </div>

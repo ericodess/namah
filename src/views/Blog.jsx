@@ -39,31 +39,31 @@ const Blog = () => {
                         <Redirector 
                             key={index}
                             redirectorType='post'
-                            redirectorID={element.postId}    
+                            redirectorID={element.id}    
                         >
                             <RedirectorInfo>
                                 <RedirectorText 
                                     infoType="type"
                                     color="dark"
                                 >
-                                    {element.postTheme}
+                                    {element.theme}
                                 </RedirectorText>
                                 <RedirectorText 
                                     infoType="title"
                                     color="dark"
                                 >
-                                    {element.postTitle}
+                                    {element.title}
                                 </RedirectorText>
                                 <RedirectorText 
                                     infoType="user"
                                     color="grey"
                                 >
-                                    {element.postAuthor}
+                                    {element.author}
                                 </RedirectorText>
                             </RedirectorInfo>
                             <RedirectorBanner
-                                url={`data:image/png;base64,${element.postImage}`}
-                                alt={element.postTitle}
+                                url={`data:image/png;base64,${element.image}`}
+                                alt={element.title}
                             />
                         </Redirector>
                     );

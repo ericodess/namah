@@ -40,25 +40,25 @@ const Podcasts = () => {
                         <Redirector 
                             key={index}
                             redirectorType='podcast'
-                            redirectorID={element.podcastId}
+                            redirectorID={element.id}
                         >
                             <RedirectorInfo>
                                 <RedirectorText
                                     infoType="title"
                                     color="dark"
                                 >
-                                    {element.podcastTitle}
+                                    {element.title}
                                 </RedirectorText>
                                 <RedirectorText
                                     infoType="user"
                                     color="grey"
                                 >
-                                    {element.podcastAuthor} #{element.podcastId}
+                                    {element.podcastAuthor} #{element.id}
                                 </RedirectorText>  
                             </RedirectorInfo>
                             <RedirectorBanner
-                                url={`data:image/png;base64,${element.podcastImage}`}
-                                alt={element.podcastTitle}
+                                url={`data:image/png;base64,${element.image}`}
+                                alt={element.title}
                                 type='podcast'
                             />
                         </Redirector >

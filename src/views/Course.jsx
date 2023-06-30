@@ -41,11 +41,11 @@ const Course = (props) => {
                     <div className="page__course-banner">
                         <img 
                             className="page__course-image"
-                            src={`data:image/png;base64,${course.courseImage}`} 
-                            alt={course.courseTitle ? course.courseTitle : 'Course'}  
+                            src={`data:image/png;base64,${course.image}`} 
+                            alt={course.title ? course.title : 'Course'}  
                         />
                         <span className="page__course-info">
-                            <h3 className="page__course-title">{course.courseTitle ? course.courseTitle : ''}</h3>
+                            <h3 className="page__course-title">{course.title ? course.title : ''}</h3>
                             <p className="page__course-type">CURSO</p>
                             <p className="page__course-duration">
                                 <svg
@@ -62,13 +62,13 @@ const Course = (props) => {
                                         fill="#73A8A0"
                                     />
                                 </svg>
-                                {course.courseDate ? calcDateDiff(course.courseDate.startDate,course.courseDate.endDate) + ' Days' : ''}
+                                {calcDateDiff(course.startDate,course.endDate)+ ' Days'}
                             </p>
                         </span>
                     </div>
                     <div className="page__course-content">
                         <p className="page__course-description">
-                            <span>{course.courseDescription ? course.courseDescription : ''}</span>
+                            <span>{course.description ? course.description : ''}</span>
                         </p>
                     </div>
                 </Post>
